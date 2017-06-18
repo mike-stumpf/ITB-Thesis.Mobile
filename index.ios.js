@@ -1,1 +1,1 @@
-import './router';
+import './src/ducks/mobileStore';
