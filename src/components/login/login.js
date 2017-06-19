@@ -1,23 +1,37 @@
 import React  from 'react';
 import { Text,View,Button,TextInput } from 'react-native';
+import { NavigationActions } from 'react-navigation';
 
 import validationService from '../../services/validation';
 
 class Login extends React.Component {
-    static navigationOptions = {
-        title: 'Login',
-    };
+
+    dashboardRedirect(userIsLoggedIn){
+        if (userIsLoggedIn) {
+            this.props.navigation.dispatch(
+                NavigationActions.reset({ index: 0, actions: [NavigationActions.navigate({ routeName: 'Dashboard' })] })
+            );
+        }
+    }
 
     constructor(props) {
         super(props);
         this.state = {
-            email: this.props.user.email,
-            password: this.props.user.password,
+            email: this.props.currentUser.email,
+            password: this.props.currentUser.password,
             emailError: false,
             passwordError: false,
             submissionError: false
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    componentDidMount(){
+        this.dashboardRedirect(this.props.userIsLoggedIn);
+    }
+
+    componentWillReceiveProps(nextProps) {
+        this.dashboardRedirect(nextProps.userIsLoggedIn);
     }
 
     //handlers
@@ -47,7 +61,7 @@ class Login extends React.Component {
                     editable = {true}
                     maxLength = {100}
                     autoFocus = {true}
-                    defaultValue = {this.props.user.email}
+                    defaultValue = {this.props.currentUser.email}
                     keyboardType = {'email-address'}
                     placeholder = {'Email Address'}
                     spellCheck = {false}
@@ -59,7 +73,7 @@ class Login extends React.Component {
                     editable = {true}
                     maxLength = {100}
                     autoFocus = {true}
-                    defaultValue = {this.props.user.email}
+                    defaultValue = {this.props.currentUser.email}
                     keyboardType = {'default'}
                     placeholder = {'Password'}
                     secureTextEntry= {true}

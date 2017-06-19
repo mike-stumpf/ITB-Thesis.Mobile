@@ -1,21 +1,52 @@
 import React  from 'react';
-import {
-    Text,
-    View,
-    Button
-} from 'react-native';
+import { Text, View, Button } from 'react-native';
+import { NavigationActions } from 'react-navigation';
+
+import userService from '../../services/user';
 
 class Dashboard extends React.Component {
-    // Nav options can be defined as a function of the screen's props:
-    static navigationOptions = ({ navigation }) => ({
-        title: 'Chatting',
-    });
+
+    loginRedirect(){
+        this.props.navigation.dispatch(
+            NavigationActions.reset({ index: 0, actions: [NavigationActions.navigate({ routeName: 'Login' })] })
+        );
+    }
+
+    constructor(props) {
+        super(props);
+    }
+
+    componentDidMount(){
+        //is logged in check
+        if (!this.props.userIsLoggedIn){
+            this.loginRedirect();
+        }
+    }
+
+    componentWillReceiveProps(nextProps) {
+        if (!nextProps.userIsLoggedIn) {
+            this.loginRedirect();
+        }
+    }
+
+    //handlers
+    //---------------------------------
+    handleLogoutSubmit = () => {
+        this.props.handleLogout();
+        this.loginRedirect();
+    };
+
+
+    //renders
+    //---------------------------------
     render() {
-        // The screen's current route is passed in to `props.navigation.state`:
-        const { params } = this.props.navigation.state;
         return (
             <View>
-                <Text>Chat with {params.user}</Text>
+                <Text>Hello {userService.getUserFullName(this.props.currentUser)}</Text>
+                <Button
+                    onPress={() => this.handleLogoutSubmit()}
+                    title="Log out"
+                />
             </View>
         );
     }
