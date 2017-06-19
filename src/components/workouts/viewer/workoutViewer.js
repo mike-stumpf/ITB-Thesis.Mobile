@@ -8,7 +8,7 @@ class Dashboard extends React.Component {
     }
 
     componentDidMount(){
-        this.props.getWorkoutData(20);
+        this.props.getWorkoutData(this.props.navigation.state.params.workoutId);
     }
 
     //handlers
@@ -21,10 +21,7 @@ class Dashboard extends React.Component {
     render() {
         return (
             <View>
-                <Button
-                    onPress={() => this.props.navigation.goBack(null)}
-                    title="Back"
-                />
+
             </View>
         );
     }
