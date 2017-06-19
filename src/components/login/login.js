@@ -65,6 +65,8 @@ class Login extends React.Component {
                     keyboardType = {'email-address'}
                     placeholder = {'Email Address'}
                     spellCheck = {false}
+                    autoCorrect={false}
+                    autoCapitalize={'none'}
                     onChangeText={(email) => this.setState({email})}
                 />
                 <TextInput
@@ -73,11 +75,13 @@ class Login extends React.Component {
                     editable = {true}
                     maxLength = {100}
                     autoFocus = {true}
-                    defaultValue = {this.props.currentUser.email}
+                    defaultValue = {this.props.currentUser.password}
                     keyboardType = {'default'}
                     placeholder = {'Password'}
                     secureTextEntry= {true}
                     spellCheck = {false}
+                    autoCorrect={false}
+                    autoCapitalize={'none'}
                     onChangeText={(password) => this.setState({password})}
                 />
                 <Button

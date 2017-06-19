@@ -1,15 +1,15 @@
 import {connect} from 'react-redux';
 
 import { actions as userActions } from '../../ducks/ducks/user';
+import store from '../../ducks/mobileStore';
 import authorizationService from '../../services/authorization';
 
-import Dashboard from './dashboard';
+import Register from './register';
 
 const mapStateToProps = (state) => {
-    let userState = state.userState,
-        currentUser = userState.currentUser;
+    let userState = state.userState;
     return ({
-        currentUser: currentUser,
+        user: userState.currentUser,
         userIsLoggedIn: authorizationService.isUserLoggedIn(state),
         response: userState.response
     });
@@ -17,8 +17,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return({
-        handleLogout: () => {
-            dispatch(userActions.logout());
+        handleRegisterSubmit: (firstName, lastName, email, password) => {
+            dispatch(userActions.register(store, firstName, lastName, email, password));
         }
     })
 };
@@ -26,4 +26,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(Dashboard);
+)(Register);
