@@ -40,12 +40,21 @@ class Dashboard extends React.Component {
     //renders
     //---------------------------------
     render() {
+        const { navigate } = this.props.navigation;
         return (
             <View>
                 <Text>Hello {userService.getUserFullName(this.props.currentUser)}</Text>
                 <Button
                     onPress={() => this.handleLogoutSubmit()}
                     title="Log out"
+                />
+                <Button
+                    onPress={() => navigate('Workout')}
+                    title="New Workout"
+                />
+                <Button
+                    onPress={() => navigate('WorkoutLibrary')}
+                    title="View Workouts"
                 />
             </View>
         );

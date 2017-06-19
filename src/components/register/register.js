@@ -56,7 +56,6 @@ class Register extends React.Component {
             lastNameError: !validLastName,
             submissionError: null
         });
-        console.log(this.state);
         if (validEmail && validPassword && validRepeatPassword && validFirstName && validLastName) {
             this.props.handleRegisterSubmit(firstNameValue, lastNameValue, emailValue, passwordValue);
         }
@@ -65,6 +64,7 @@ class Register extends React.Component {
     //renders
     //---------------------------------
     render() {
+        //todo, forgot password screen
         const { navigate } = this.props.navigation;
         return (
             <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}}>
