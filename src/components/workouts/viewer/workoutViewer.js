@@ -12,10 +12,6 @@ class Dashboard extends React.Component {
         this.props.getWorkoutData(this.props.navigation.state.params.workoutId);
     }
 
-    //handlers
-    //---------------------------------
-
-
 
     //renders
     //---------------------------------
@@ -26,7 +22,7 @@ class Dashboard extends React.Component {
                 <FlatList
                     data={this.props.currentWorkout.exercises}
                     renderItem={({item}) => (
-                        <View key={item.id} style={{flexDirection:'row'}}>
+                        <View key={item.id} style={{flexDirection:'row',justifyContent: 'space-between'}}>
                             <Text>{item.name}</Text>
                             <Text style={{marginLeft:'10%',marginRight: '10%'}}>{item.actualReps} reps</Text>
                         </View>

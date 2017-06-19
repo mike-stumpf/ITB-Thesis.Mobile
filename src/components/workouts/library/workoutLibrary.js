@@ -22,9 +22,9 @@ class Dashboard extends React.Component {
                 <FlatList
                     data={this.props.workouts}
                     renderItem={({item}) => (
-                        <View key={item.id} style={{flexDirection:'row'}}>
+                        <View key={item.id} style={{flexDirection:'row',justifyContent: 'space-between'}}>
                             <Text>{moment(item.dateCreated).format('DD/MM/YYYY @ hh:mm')}</Text>
-                            <Text style={{marginLeft:'10%',marginRight: '10%'}}>{item.exercises} exercises</Text>
+                            <Text>{item.exercises} exercises</Text>
                             <Button
                                 onPress={() => navigate('WorkoutViewer', { workoutId: item.id })}
                                 title={'View'}/>
