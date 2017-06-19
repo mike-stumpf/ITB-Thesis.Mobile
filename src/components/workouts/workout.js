@@ -51,7 +51,6 @@ class Dashboard extends React.Component {
                                 numberOfLines = {1}
                                 editable = {true}
                                 maxLength = {100}
-                                autoFocus = {true}
                                 defaultValue = {'0'}
                                 keyboardType = {'number-pad'}
                                 placeholder = {'Quantity'}

@@ -72,7 +72,6 @@ class Register extends React.Component {
                     numberOfLines = {1}
                     editable = {true}
                     maxLength = {100}
-                    autoFocus = {true}
                     keyboardType = {'default'}
                     placeholder = {'First Name'}
                     spellCheck = {false}
@@ -109,7 +108,6 @@ class Register extends React.Component {
                     numberOfLines = {1}
                     editable = {true}
                     maxLength = {100}
-                    autoFocus = {true}
                     keyboardType = {'default'}
                     placeholder = {'Password'}
                     secureTextEntry= {true}
@@ -123,7 +121,6 @@ class Register extends React.Component {
                     numberOfLines = {1}
                     editable = {true}
                     maxLength = {100}
-                    autoFocus = {true}
                     keyboardType = {'default'}
                     placeholder = {'Repeat Password'}
                     secureTextEntry= {true}

@@ -38,7 +38,6 @@ class ForgotPassword extends React.Component {
                     numberOfLines = {1}
                     editable = {true}
                     maxLength = {100}
-                    autoFocus = {true}
                     keyboardType = {'email-address'}
                     placeholder = {'Email Address'}
                     spellCheck = {false}

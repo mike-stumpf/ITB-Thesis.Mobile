@@ -60,7 +60,6 @@ class Login extends React.Component {
                     numberOfLines = {1}
                     editable = {true}
                     maxLength = {100}
-                    autoFocus = {true}
                     defaultValue = {this.props.currentUser.email}
                     keyboardType = {'email-address'}
                     placeholder = {'Email Address'}
@@ -74,7 +73,6 @@ class Login extends React.Component {
                     numberOfLines = {1}
                     editable = {true}
                     maxLength = {100}
-                    autoFocus = {true}
                     defaultValue = {this.props.currentUser.password}
                     keyboardType = {'default'}
                     placeholder = {'Password'}
