@@ -7,6 +7,7 @@ import Register from './src/components/register/registerContainer';
 import Workout from './src/components/workouts/workoutContainer';
 import WorkoutLibrary from './src/components/workouts/library/workoutLibraryContainer';
 import WorkoutViewer from './src/components/workouts/viewer/workoutViewerContainer';
+import ForgotPassword from './src/components/login/forgotPassword/forgotPasswordContainer';
 
 const AppNavigator = StackNavigator({
     Login: {
@@ -43,6 +44,12 @@ const AppNavigator = StackNavigator({
         screen: WorkoutViewer,
         navigationOptions: ({navigation}) => ({
             title: 'View Workout',
+        })
+    },
+    ForgotPassword: {
+        screen: ForgotPassword,
+        navigationOptions: ({navigation}) => ({
+            title: 'Forgot Password',
         })
     },
 });

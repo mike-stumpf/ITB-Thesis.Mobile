@@ -88,6 +88,11 @@ class Login extends React.Component {
                     onPress={() => this.handleSubmit()}
                     title="Submit"
                 />
+                <Text style={{marginTop: 50}}>Forgot your password?</Text>
+                <Button
+                    onPress={() => navigate('ForgotPassword')}
+                    title="Forgot Password"
+                />
                 <Text style={{marginTop: 50}}>Don't have an account?</Text>
                 <Button
                     onPress={() => navigate('Register')}

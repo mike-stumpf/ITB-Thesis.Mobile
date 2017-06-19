@@ -43,11 +43,7 @@ class Dashboard extends React.Component {
         const { navigate } = this.props.navigation;
         return (
             <View>
-                <Text>Hello {userService.getUserFullName(this.props.currentUser)}</Text>
-                <Button
-                    onPress={() => this.handleLogoutSubmit()}
-                    title="Log out"
-                />
+                <Text style={{marginTop: 15,textAlign: 'center'}}>Hello {userService.getUserFullName(this.props.currentUser)}</Text>
                 <Button
                     onPress={() => navigate('Workout')}
                     title="New Workout"
@@ -55,6 +51,11 @@ class Dashboard extends React.Component {
                 <Button
                     onPress={() => navigate('WorkoutLibrary')}
                     title="View Workouts"
+                />
+                <Text style={{marginTop: 50,textAlign: 'center'}}>Finished with your session?</Text>
+                <Button
+                    onPress={() => this.handleLogoutSubmit()}
+                    title="Log out"
                 />
             </View>
         );

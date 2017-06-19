@@ -137,11 +137,6 @@ class Register extends React.Component {
                     onPress={() => this.handleRegisterSubmit()}
                     title="Submit"
                 />
-                <Text style={{marginTop: 50}}>Already have an account?</Text>
-                <Button
-                    onPress={() => this.props.navigation.goBack(null)}
-                    title="Login"
-                />
             </View>
         );
     }
