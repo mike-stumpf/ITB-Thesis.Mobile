@@ -88,7 +88,7 @@ class Login extends React.Component {
                     onPress={() => this.handleSubmit()}
                     title="Submit"
                 />
-                <Text style={{marginTop: 50}}>Forgot your password?</Text>
+                <Text style={{marginTop: 150}}>Forgot your password?</Text>
                 <Button
                     onPress={() => navigate('ForgotPassword')}
                     title="Forgot Password"
